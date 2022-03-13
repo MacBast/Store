@@ -1,0 +1,10 @@
+.fondomovil{
+    background-image: url("img/Foto3.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    height: 450px;
+}
+
+.footer{
+    background: rgb(134, 134, 134);
+}
