@@ -14,10 +14,12 @@ export function pintarTienda() {
         {nombre:"Bugatti Type 57 Atlantic",precio:"35M dollars",foto:"../img/atlantic_07.jpg",descripcion:"Esta buelta corre mas que tu mama"},
     ]
     //recorriendo un areglo con JS, buscar seleccionar esculcar, mirar 
-    //forEach entrar y contar lo de un arreglo, el numero de vces que tanga el arreglo
+    //forEach entrar y contar y recorrer lo de un arreglo, el numero de vces que tanga el arreglo
 
     productos.forEach(function (producto) {
-        console.log("Cali es cali, lo demas es loma")
+        console.log(producto.nombre)
+        console.log(producto.precio)
+        console.log(producto.foto)
     })
 
     //escuchando click in the button
