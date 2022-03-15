@@ -1,4 +1,4 @@
-//function pintarTienda() {
+export function pintarTienda() {
     
     //Arreglo que objetos
     let productos=[
@@ -18,10 +18,9 @@
     let fila=document.getElementById("fila")
 
     productos.forEach(function (producto) {
-        console.log(producto.nombre)
+       /* console.log(producto.nombre)
         console.log(producto.precio)
-        console.log(producto.foto)
-        console.log("hola mundo")
+        console.log(producto.foto)*/
         //pintando con Js
         //1. comenzar a crear la estrucura necesaria
         let columna=document.createElement("div")
@@ -36,35 +35,42 @@
         foto.classList.add("card-img-top")
         foto.src = producto.foto
 
+        let nombre=document.createElement("h4")
+        nombre.classList.add("text-center")
+        nombre.textContent=producto.nombre
+
+        let boton = document.createElement("button")
+        boton.setAttribute("type", "button")
+        boton.classList.add("btn", "btn-info", "mx-4")
+        boton.textContent = "Ver producto"
+
+        
         tarjeta.appendChild(foto)
         columna.appendChild(tarjeta)
         fila.appendChild(columna)
-
+        tarjeta.appendChild(nombre)
+        tarjeta.appendChild(boton)
+        
+        
+        /*escuchando click in the button
+        
+        let boton =document.getElementById("boton")
+        
+        //detectanod el primer evento 
+        boton.addEventListener("click",cambiarfoto)
+        
+        //creando una fucnion 
+        function cambiarfoto() {
+            let foto=document.getElementById("fotoprueba")
+            foto.src="img/centidieci_01.jpg"
+            console.log("quio pana, que nejesita?")
+        } */
+        
     })
-
-    /*escuchando click in the button
-
-    let boton =document.getElementById("boton")
-
-    //detectanod el primer evento 
-    boton.addEventListener("click",cambiarfoto)
-
-    //creando una fucnion 
-    function cambiarfoto() {
-        let foto=document.getElementById("fotoprueba")
-        foto.src="img/centidieci_01.jpg"
-        console.log("quio pana, que nejesita?")
-    } */
-
-//}
+}
 
 /*
-let boton=document.createElement("button")
-boton.setAttribute("type","button")
-boton.classList.add("btn","btn-info","mx-4")
-boton.textContent="Ver producto"
 
-tarjeta.appendChild(boton)
 */
 
 
