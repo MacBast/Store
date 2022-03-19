@@ -2,16 +2,16 @@ export function pintarTienda() {
     
     //Arreglo que objetos
     let productos=[
-        {nombre:"Bugatti Super sport+",precio:"3M dollars",foto:"../img/superSport02.jpg",descripcion:"Bugatti rapido"},
-        {nombre:"Bugatti The Voiture Noire",precio:"25M dollars",foto:"../img/Foto1.jpg",descripcion:"Bugatti rapido"},
-        {nombre:"Bugatti Veyron",precio:"3.5M dollars",foto:"../img/veyron_04.jpg",descripcion:"Bugatti rapido"},
-        {nombre:"Bugatti EB 110",precio:"5M dollars",foto:"../img/EB110_09.jpg",descripcion:"Bugatti rapido"},
-        {nombre:"Bugatti The Bolid",precio:"20M dollars",foto:"../img/bolid_05.png",descripcion:"Bugatti rapido"},
-        {nombre:"Bugatti Centodieci",precio:"15M dollars",foto:"../img/centidieci_01.jpg",descripcion:"Bugatti rapido"},
-        {nombre:"Bugatti Chiron",precio:"7M dollars",foto:"../img/chiron03.jpg",descripcion:"Bugatti rapido"},
-        {nombre:"Bugatti Divo",precio:"18M dollars",foto:"../img/Divo_06.jpg",descripcion:"Bugatti rapido"},
-        {nombre:"Bugatti Chiron GT",precio:"10M dollars",foto:"../img/GT_08.jpg",descripcion:"Bugatti rapido"},
-        {nombre:"Bugatti Type 57 Atlantic",precio:"35M dollars",foto:"../img/atlantic_07.jpg",descripcion:"Bugatti rapido"}
+        {nombre:"Bugatti Super sport+",precio:"3M dollars",foto:"../img/superSport02.jpg",descripcion:"Bugatti que rompio el record de los 400km/h"},
+        {nombre:"Bugatti The Voiture Noire",precio:"25M dollars",foto:"../img/Foto1.jpg",descripcion:"La mejor obra moderna de arte de Bugatti"},
+        {nombre:"Bugatti Veyron",precio:"3.5M dollars",foto:"../img/veyron_04.jpg",descripcion:"Uno de los mas lujosos"},
+        {nombre:"Bugatti EB 110",precio:"5M dollars",foto:"../img/EB110_09.jpg",descripcion:"Bugatti que consigio ser el mas rapido en su epoca"},
+        {nombre:"Bugatti The Bolid",precio:"20M dollars",foto:"../img/bolid_05.png",descripcion:"Es todo un Bolido"},
+        {nombre:"Bugatti Centodieci",precio:"15M dollars",foto:"../img/centidieci_01.jpg",descripcion:"El mas Elegante de la familia"},
+        {nombre:"Bugatti Chiron",precio:"7M dollars",foto:"../img/chiron03.jpg",descripcion:"Bugatti para el diario"},
+        {nombre:"Bugatti Divo",precio:"18M dollars",foto:"../img/Divo_06.jpg",descripcion:"Bugatti para conquistar nena he ir de fiesta"},
+        {nombre:"Bugatti Chiron GT",precio:"10M dollars",foto:"../img/GT_08.jpg",descripcion:"Bugatti para cuando quieras correr solo un poquito"},
+        { nombre: "Bugatti Type 57 Atlantic", precio: "35M dollars", foto: "../img/atlantic_07.jpg", descripcion:"La mejor obra de arte de Ettore Bugatti"}
     ]
     //recorriendo un areglo con JS, buscar seleccionar esculcar, mirar 
     //forEach entrar y contar y recorrer lo de un arreglo, el numero de vces que tanga el arreglo
