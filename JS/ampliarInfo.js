@@ -10,8 +10,6 @@ export function ampliarInformacion(event) {
             descripcion: event.target.parentElement.querySelector("p").textContent
         }
 
-        //console.log(producto)
-
         let foto=document.getElementById("fotoInfo")
         foto.src=producto.foto
         let nombre=document.getElementById("nameInfo")

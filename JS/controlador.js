@@ -6,12 +6,14 @@ import {ampliarInformacion} from "./ampliarInfo.js"
 pintarTienda();
 
 //llamando al modulo ampliarinfo
-let contenedorTienda=document.getElementById("fila")
-contenedorTienda.addEventListener("click",function(event){
-    
-    let Modalinfoproducto = new bootstrap.Modal(document.getElementById('Modalinfoproducto'))
-    //console.log(event.target)
-    ampliarInformacion(event)
-    Modalinfoproducto.show()
 
-})
+let contenedorTienda=document.getElementById("fila")
+ 
+contenedorTienda.addEventListener("click",function(event){
+        if(event.target.classList.contains("btn")){
+        let Modalinfoproducto = new bootstrap.Modal(document.getElementById('Modalinfoproducto'))
+        console.log(event.target)
+        ampliarInformacion(event)
+        Modalinfoproducto.show()
+        }
+    })

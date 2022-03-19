@@ -3,7 +3,7 @@ export function pintarTienda() {
     //Arreglo que objetos
     let productos=[
         {nombre:"Bugatti Super sport+",precio:"3M dollars",foto:"../img/superSport02.jpg",descripcion:"Bugatti que rompio el record de los 400km/h"},
-        { nombre: "Bugatti The Voiture Noire", precio: "25M dollars", foto: "../img/Foto1.jpg", descripcion:"La mejor obra de arte moderna de Bugatti"},
+        {nombre: "Bugatti The Voiture Noire", precio: "25M dollars", foto: "../img/Foto1.jpg", descripcion:"La mejor obra de arte moderna de Bugatti"},
         {nombre:"Bugatti Veyron",precio:"3.5M dollars",foto:"../img/veyron_04.jpg",descripcion:"Uno de los mas lujosos"},
         {nombre:"Bugatti EB 110",precio:"5M dollars",foto:"../img/EB110_09.jpg",descripcion:"Bugatti que consigio ser el mas rapido en su epoca"},
         {nombre:"Bugatti The Bolid",precio:"20M dollars",foto:"../img/bolid_05.png",descripcion:"Es todo un Bolido"},
@@ -55,11 +55,11 @@ export function pintarTienda() {
         boton.classList.add("btn", "btn-info", "mx-4", "mb-2")
         boton.textContent = "Ver producto"
 
-        
+        tarjeta.appendChild(nombre)
         tarjeta.appendChild(foto)
         columna.appendChild(tarjeta)
         fila.appendChild(columna)
-        tarjeta.appendChild(nombre)
+        
         tarjeta.appendChild(precio)
         tarjeta.appendChild(descripcion)
         tarjeta.appendChild(boton)
