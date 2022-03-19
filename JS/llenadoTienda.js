@@ -46,9 +46,9 @@ export function pintarTienda() {
         precio.textContent=producto.precio
         
         //descripcion
-        let precio = document.createElement("p")
-        precio.classList.add("text-center")
-        precio.textContent = producto.precio
+        let descripcion = document.createElement("p")
+        descripcion.classList.add("text-center")
+        descripcion.textContent = producto.descripcion
 
         let boton = document.createElement("button")
         boton.setAttribute("type", "button")
