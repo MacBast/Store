@@ -1,9 +1,9 @@
 
-import { pintarTienda } from "./llenadoTienda.js"
+import {pintarTienda} from "./llenadoTienda.js"
 import {ampliarInformacion} from "./ampliarInfo.js"
 
 //llamando al modulo de pintar
-pintarTienda()
+pintarTienda();
 
 //llamando al modulo ampliarinfo
 let contenedorTienda=document.getElementById("fila")

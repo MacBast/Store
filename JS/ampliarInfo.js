@@ -5,15 +5,20 @@ export function ampliarInformacion(event) {
         //console.log("Estoy haciendo clic en el boton")
         producto={
             foto:event.target.parentElement.querySelector("img").src,
-            nombre:event.target.parentElement.querySelector("h4").textContent
+            nombre:event.target.parentElement.querySelector("h4").textContent,
+            precio:event.target.parentElement.querySelector("h2").textContent,
+            descripcion: event.target.parentElement.querySelector("h2").textContent,
         }
 
-        console.log(producto)
+        //console.log(producto)
 
         let foto=document.getElementById("fotoInfo")
         foto.src=producto.foto
         let nombre=document.getElementById("nameInfo")
         nombre.textContent=producto.nombre
+        let precio=document.getElementById("precioInfo")
+        precio.textContent=producto.precio
+
     }
 
 
