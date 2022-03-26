@@ -12,14 +12,19 @@ export function ampliarInformacion(event) {
 
         let foto=document.getElementById("fotoInfo")
         foto.src=producto.foto
+
         let nombre=document.getElementById("nameInfo")
         nombre.textContent=producto.nombre
+
         let precio=document.getElementById("precioInfo")
         precio.textContent=producto.precio
+        
         let descripcion = document.getElementById("descripInfo")
         descripcion.textContent = producto.descripcion
 
     }
+
+    return producto
 
 
 
