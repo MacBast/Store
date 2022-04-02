@@ -26,6 +26,4 @@ export function ampliarInformacion(event) {
 
     return producto
 
-
-
 }

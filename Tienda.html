@@ -33,9 +33,9 @@
                     <!-- carrito de compras -->
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link aicon" href="#">
+                            <a class="nav-link aicon" href="#" id="resumencarrito">
                                 <i class="bi bi-cart4 icono"></i>
-                                <span id="capsula" class="position-absolute top-10 start-10 translate-middle badge rounded-pill bg-danger invisible">
+                                <span id="capsula" class="position-absolute top-10 start-10 translate-middle badge rounded-pill bg-danger invisible"> 0
                                 </span>
                             </a>
                         </li>
@@ -102,6 +102,32 @@
         </div>
     </section>
 
+    <!-- Modal carrito-->
+    <section>
+        <div class="modal fade" id="ModalCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Tienda Bugatti</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                       <div class="container" id="contenedorVenta">
+                       </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container" id="contenedorTotal">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section>
         <div class="col-12 h-100">
             <div class="row">
@@ -129,8 +155,7 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <script src="JS/controlador.js" type="module"></script>
 </body>

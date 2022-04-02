@@ -1,59 +1,127 @@
 
 import {pintarTienda} from "./llenadoTienda.js"
 import {ampliarInformacion} from "./ampliarInfo.js"
+import {pintarCarrito} from "./pintarCarrito.js"
 //crear objeto bacio
 let producto={}
 
 //llamando al modulo de pintar
 pintarTienda();
 
+let Modalinfoproducto = new bootstrap.Modal(document.getElementById('Modalinfoproducto'))
+
+
 //llamando al modulo ampliarinfo
 let contenedorTienda=document.getElementById("fila")
  
-contenedorTienda.addEventListener("click",function(event){
+    contenedorTienda.addEventListener("click",function(event){
         if(event.target.classList.contains("btn")){
-        let Modalinfoproducto = new bootstrap.Modal(document.getElementById('Modalinfoproducto'))
         producto=ampliarInformacion(event)
         Modalinfoproducto.show()
         }
     })
 
-
     //call acction add buycar
-    //carrito es un arreglo de productos (arreglo de objetos)
     let carrito=[]
-    let button = document.getElementById("btnAdd")
-    button.addEventListener('click',function(event){
-        //console.log("añadicion al car")
-        //1. capturar la cantidad of product
+    let botonadd = document.getElementById("btnAdd")
+    botonadd.addEventListener('click',function(event){
+
         let cantidadproducto=document.getElementById("cantidadProducto").value
         
-        //2. agregar la cantidad al objeto en este caso producto
         producto.cantidad=cantidadproducto
         
-        // 3. agregar lo capturado en el paso 2 al carrito
-        //palabra reserbada PUSH para agregar un elemento a un arreglo
-        //push agrega un elemento a un arreglo
         carrito.push(producto)
         
-
-        //tarea calcular la sumatoria de cantidades
-        //recorrer el arreglo y sacar la cantidad se rrecorre con un foreach
         let suma=0
         carrito.forEach(function (producto) {
-        
-            //console.log(producto.cantidad)    
+         
             suma=suma+Number(producto.cantidad)
         })
-        let capsula=document.getElementById("capsula")
-        capsula.textContent=suma
-        capsula.classList.remove("invisible")
-        //el .value solo es para los imputs
+
+       pintarCarrito(suma);
+       Modalinfoproducto.hide();
+
     })
 
     let limpiar =document.getElementById("btnLimpiar")
     limpiar.addEventListener('click', function(event){
-
         carrito=[]
         capsula.classList.add("invisible")
+    })
+
+
+
+    //4 ver resumen de venta 
+    //if(event.target.classList.contains("btn")){
+    let btnCarrito = document.getElementById("resumencarrito")
+
+    btnCarrito.addEventListener('click', function(event){
+
+        let contenedor=document.getElementById("contenedorVenta")
+        let contotal=document.getElementById("contenedorTotal")
+        let modalventa = new bootstrap.Modal(document.getElementById('ModalCarrito'))
+        //borrar el contenido de html
+        contenedor.innerHTML=""
+        //recorrer el carrito para pintar los productos en la factura
+        carrito.forEach(function(producto){
+            //traversing
+            let fila=document.createElement("div")
+            fila.classList.add("row", "mt-2")
+
+            let columna1=document.createElement("div")
+            columna1.classList.add("col-12", "col-md-4")
+
+            
+            let columna2=document.createElement("div")
+            columna2.classList.add("col-12", "col-md-8")
+
+            let foto= document.createElement("img")
+            foto.classList.add("img-fluid", "w-100")
+            foto.src=producto.foto
+
+            let nombre=document.createElement("h4")
+            nombre.classList.add("text-center")
+            nombre.textContent=producto.nombre
+
+            let precio=document.createElement("h5")
+            precio.classList.add("text-center")
+            precio.textContent=producto.precio
+
+            let cantidad=document.createElement("p")
+            cantidad.classList.add("text-center")
+            cantidad.textContent=producto.cantidad
+
+            //padres e hijos
+            columna1.appendChild(foto)
+            fila.appendChild(columna1)
+            fila.appendChild(columna2)
+
+            contenedor.appendChild(fila)
+
+            columna2.appendChild(nombre)
+            columna2.appendChild(precio)
+            columna2.appendChild(cantidad)
+            
+        })
+        modalventa.show()
+
+        carrito.forEach(function(producto){
+            let fila=document.createElement("div")
+            fila.classList.add("row", "mt-2")
+
+            let columna1=document.createElement("div")
+            columna1.classList.add("col-12", "col-md-4")
+
+            let totalCompra=document.createElement("p")
+            totalCompra.classList.add("text-center")
+            totalCompra.textContent="total compra"
+                        
+            //padres e hijos
+            fila.appendChild(columna1)
+            columna1.appendChild(totalCompra)
+            contenedor.appendChild(fila)
+
+            
+        })
+        
     })

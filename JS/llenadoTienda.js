@@ -11,7 +11,7 @@ export function pintarTienda() {
         {nombre:"Bugatti Chiron",precio:"7M dollars",foto:"../img/chiron03.jpg",descripcion:"Bugatti para el diario"},
         {nombre:"Bugatti Divo",precio:"18M dollars",foto:"../img/Divo_06.jpg",descripcion:"Bugatti para conquistar nena he ir de fiesta"},
         {nombre:"Bugatti Chiron GT",precio:"10M dollars",foto:"../img/GT_08.jpg",descripcion:"Bugatti para cuando quieras correr solo un poquito"},
-        { nombre: "Bugatti Type 57 Atlantic", precio: "35M dollars", foto: "../img/atlantic_07.jpg", descripcion:"La mejor obra de arte de Ettore Bugatti"}
+        {nombre: "Bugatti Type 57 Atlantic", precio: "35M dollars", foto: "../img/atlantic_07.jpg", descripcion:"La mejor obra de arte de Ettore Bugatti"}
     ]
     //recorriendo un areglo con JS, buscar seleccionar esculcar, mirar 
     //forEach entrar y contar y recorrer lo de un arreglo, el numero de vces que tanga el arreglo
