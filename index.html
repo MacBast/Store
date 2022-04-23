@@ -85,7 +85,7 @@
         </div>
     </section>
 
-    <!-- <canvas> -->
+    <!-- <canvas registro> -->
     <section>
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header">
@@ -93,20 +93,19 @@
               <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-              <form>
+
+              <form id="formularioregistro">
                 <div class="mb-3">
                   <label class="form-label">Correo</label>
                   <input type="text" class="form-control" id="correo">
                 </div>
-
                 <div class="mb-3">
                   <label class="form-label">Contraseña</label>
                   <input type="password" class="form-control" id="password">
                 </div>
-
                 <button type="submit" class="btn btn-primary" id="btnRegistro">Enviar</button>
-
               </form>
+
             </div>
           </div>
     </section>
@@ -146,6 +145,29 @@
         </div>
       </div>
     </footer>
+
+    <!-- modal 2 -->
+    <section>
+      <div class="modal fade" id="modalinfo" tabindex="-1" >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Store Bugatti</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p id="infogeneral">
+
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>      
+    </section>
     
     <script src="JS/FireBase.js" type="module"></script>
     <script src="JS/registro.js" type="module"></script>
