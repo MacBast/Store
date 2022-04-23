@@ -3,7 +3,7 @@ import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com
 let btnregistro=document.getElementById("btnRegistro");
 let modalinformativo = new bootstrap.Modal(document.getElementById('modalinfo'))
 
-btnregistro.addEventListener("click", function(event){
+b-tnregistro.addEventListener("click", function(event){
     //para no reiniciar el formulario se usa lo siguiente
     event.preventDefault()
 
