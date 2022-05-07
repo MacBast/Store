@@ -4,6 +4,7 @@ import {ampliarInformacion} from "./ampliarInfo.js"
 import {pintarCarrito} from "./pintarCarrito.js"
 //crear objeto bacio
 let producto={}
+let total1 = 0
 
 //llamando al modulo de pintar
 pintarTienda();
@@ -47,6 +48,7 @@ let contenedorTienda=document.getElementById("fila")
     limpiar.addEventListener('click', function(event){
         carrito=[]
         capsula.classList.add("invisible")
+        total1=0
     })
 
 
@@ -56,11 +58,11 @@ let contenedorTienda=document.getElementById("fila")
     let btnCarrito = document.getElementById("resumencarrito")
 
     btnCarrito.addEventListener('click', function (event) {
-
-    let contenedor = document.getElementById("contenedorVenta")
-    let contotal = document.getElementById("contenedorTotal")
-    let modalventa = new bootstrap.Modal(document.getElementById('ModalCarrito'))
-    let subtotal=0
+        
+        let contenedor = document.getElementById("contenedorVenta")
+        let contotal = document.getElementById("contenedorTotal")
+        let modalventa = new bootstrap.Modal(document.getElementById('ModalCarrito'))
+        let subtotal=0
     //borrar el contenido de html
     contenedor.innerHTML = ""
     //recorrer el carrito para pintar los productos en la factura
@@ -97,7 +99,8 @@ let contenedorTienda=document.getElementById("fila")
         Tsubtotal.textContent = "Subtotal: " + subtotal
         
         subtotal = producto.cantidad * producto.precio
-        contotal.textContent = "El total es: " + subtotal + subtotal
+        total1=total1+subtotal
+        contotal.textContent = "El total es: " + total1;
         
         //padres e hijos
         columna1.appendChild(foto)
@@ -109,7 +112,7 @@ let contenedorTienda=document.getElementById("fila")
         columna2.appendChild(nombre)
         columna2.appendChild(precio)
         columna2.appendChild(cantidad)
-        columna2.appendChild(subtotal)
+        columna2.appendChild(Tsubtotal)
 
     })
     modalventa.show()
