@@ -5,9 +5,11 @@ import {pintarCarrito} from "./pintarCarrito.js"
 //crear objeto bacio
 let producto={}
 let total1 = 0
+let contotal = document.getElementById("contenedorTotal")
+
 
 //llamando al modulo de pintar
-pintarTienda();
+    pintarTienda();
 
 let Modalinfoproducto = new bootstrap.Modal(document.getElementById('Modalinfoproducto'))
 
@@ -44,11 +46,22 @@ let contenedorTienda=document.getElementById("fila")
 
     })
 
+    //limpiar carrito
     let limpiar =document.getElementById("btnLimpiar")
     limpiar.addEventListener('click', function(event){
         carrito=[]
         capsula.classList.add("invisible")
         total1=0
+        document.getElementById("contenedorVenta").innerHTML=""
+        contotal.textContent = "El total es: 0";
+    })
+    
+
+    
+    let limpiarInputNumber = document.getElementById("btnAdd");
+    let cero = document.getElementById("cantidadProducto");
+    limpiarInputNumber.addEventListener('click', function(event){
+        cero.value=1;
     })
 
 
@@ -60,13 +73,45 @@ let contenedorTienda=document.getElementById("fila")
     btnCarrito.addEventListener('click', function (event) {
         
         let contenedor = document.getElementById("contenedorVenta")
-        let contotal = document.getElementById("contenedorTotal")
         let modalventa = new bootstrap.Modal(document.getElementById('ModalCarrito'))
-        let subtotal=0
+        let subtotal = 0
+        let total2=0
     //borrar el contenido de html
-    contenedor.innerHTML = ""
-    //recorrer el carrito para pintar los productos en la factura
-    carrito.forEach(function (producto) {
+    //contenedor.innerHTML = ""
+
+
+    if (carrito.length==0 ) {
+
+        let fila = document.createElement("div")
+        fila.classList.add("row", "mt-2")
+
+        let columna1 = document.createElement("div")
+        columna1.classList.add("col-12", "col-md-4")
+
+        let texto = document.createElement("h1")
+        texto.classList.add("text-center")
+        texto.textContent = "No hay productos!"
+
+        columna1.appendChild(texto)
+        fila.appendChild(columna1)
+        contenedor.appendChild(fila)
+
+        modalventa.show()
+
+        console.log("carrito vacio")
+        
+        }else{    //recorrer el carrito para pintar los productos en la factura
+        carrito.forEach(function (producto) {
+
+        let cantpro= producto.cantidad
+        let preciopro= producto.precio
+
+
+        subtotal = cantpro * preciopro
+        total1 = subtotal
+        total2= total1+total2
+        contotal.textContent = "El total es: " + total2;
+    
         //traversing
         let fila = document.createElement("div")
         fila.classList.add("row", "mt-2")
@@ -98,10 +143,6 @@ let contenedorTienda=document.getElementById("fila")
         Tsubtotal.classList.add("text-center")
         Tsubtotal.textContent = "Subtotal: " + subtotal
         
-        subtotal = producto.cantidad * producto.precio
-        total1=total1+subtotal
-        contotal.textContent = "El total es: " + total1;
-        
         //padres e hijos
         columna1.appendChild(foto)
         fila.appendChild(columna1)
@@ -114,10 +155,18 @@ let contenedorTienda=document.getElementById("fila")
         columna2.appendChild(cantidad)
         columna2.appendChild(Tsubtotal)
 
-    })
-    modalventa.show()
+        })
+        modalventa.show()
+    }//cierre else
+})
+    
+//boton convertir 
 
-       
+    let btnconvertir =document.getElementById("btnConv")
+    btnconvertir.addEventListener('click',function (event) {
+        console.log("btn USD")
+        
+    })
     /*carrito.forEach(function(producto){
         let fila=document.createElement("div")
         fila.classList.add("row", "mt-2")
@@ -134,5 +183,3 @@ let contenedorTienda=document.getElementById("fila")
         columna1.appendChild(totalCompra)
         contenedor.appendChild(fila)
     })*/
-
-})
