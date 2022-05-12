@@ -74,8 +74,6 @@ btnCarrito.addEventListener('click', function (event) {
         columna1.appendChild(texto)
         fila.appendChild(columna1)
         contenedor.appendChild(fila)
-
-        modalventa.show()
     }
     
     //borrar el contenido de html
@@ -83,6 +81,7 @@ btnCarrito.addEventListener('click', function (event) {
 
     if (carrito.length == 0) {
         FunVacio()
+        modalventa.show()
     } else {
         //recorrer el carrito para pintar los productos en la factura
         carrito.forEach(function (producto) {
@@ -93,7 +92,7 @@ btnCarrito.addEventListener('click', function (event) {
             subtotal = cantpro * preciopro
             total1 = subtotal
             total2 = total1 + total2
-            contotal.textContent = "El total es: " + new Intl.NumberFormat('es-CO').format(total2)
+            contotal.textContent = "El total es: " + new Intl.NumberFormat('es-CO').format(total2) + " Cop"
 
             //traversing
             let fila = document.createElement("div")
@@ -116,7 +115,7 @@ btnCarrito.addEventListener('click', function (event) {
 
             let precio = document.createElement("h5")
             precio.classList.add("text-center")
-            precio.textContent = new Intl.NumberFormat('es-CO').format(producto.precio) 
+            precio.textContent = new Intl.NumberFormat('es-CO').format(producto.precio) + " Cop"
 
             let cantidad = document.createElement("p")
             cantidad.classList.add("text-center")
@@ -124,7 +123,7 @@ btnCarrito.addEventListener('click', function (event) {
 
             let Tsubtotal = document.createElement("h6")
             Tsubtotal.classList.add("text-center")
-            Tsubtotal.textContent = "Subtotal: " + new Intl.NumberFormat('es-CO').format(subtotal)
+            Tsubtotal.textContent = "Subtotal: " + new Intl.NumberFormat('es-CO').format(subtotal) + " Cop"
             //padres e hijos
             columna1.appendChild(foto)
             fila.appendChild(columna1)
@@ -148,7 +147,7 @@ btnCarrito.addEventListener('click', function (event) {
     //accion para convertir al tocar el boton USD
     btnconvertir.addEventListener('click', function (event) {
         total3 = total2/usd;
-        contotal.textContent = "El total en USD es: " + new Intl.NumberFormat('de-DE').format(total3);
+        contotal.textContent = "El total en USD es: " + new Intl.NumberFormat('de-DE').format(total3) + " USD"
     })
     
     
@@ -162,7 +161,6 @@ btnCarrito.addEventListener('click', function (event) {
         document.getElementById("contenedorVenta").innerHTML=""
         contotal.textContent = ""
         FunVacio()
-
         setTimeout(function () {
             modalventa.hide()
         }, 1000);

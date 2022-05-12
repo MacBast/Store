@@ -40,7 +40,7 @@ export function pintarTienda() {
         //precio
         let precio=document.createElement("h2")
         precio.classList.add("text-center")
-        precio.textContent = producto.precio
+        precio.textContent = producto.precio 
         
         //descripcion
         let descripcion = document.createElement("p")
